@@ -1,0 +1,10 @@
+{
+  "name": "product-service",
+  "description": "Gives product details",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "cassandra-driver": "^3.1.5",
+    "express": "3.x"
+  }
+}
