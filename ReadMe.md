@@ -7,6 +7,12 @@ Tech.Used
 2)ExpressJS
 3)Cassandra
 
+Steps to install
+------------------
+1) Setup the cassandra DB : You may need to iunstall the DB in your local and get the script from script file and create and feed the sample data
+2) ..
+
+
 Current State
 ---------------------
 Currenlty it contain all the three service with in this module itself .
