@@ -28,7 +28,7 @@ CREATE TABLE pp(
 );
 
 INSERT INTO pp(pp_id,pp_name ,
-   pp_image_url,pp_long_description) VALUES('pp5002880160','Sofa set','http://s7d2.scene7.com/is/image/JCPenney/DP0530201317005523M.tif?wid=400&amp;hei=400&amp;fmt=jpg&amp;op_usm=.4,.8,0,0&amp;resmode=sharp2','Leopard-Print Sofa Jewelry Box');	
+   pp_image_url,pp_long_description) VALUES('pp5002880160','Sofa set','http://s7d2.scene7.com/is/image/DP0530201317005523M.tif?wid=400&amp;hei=400&amp;fmt=jpg&amp;op_usm=.4,.8,0,0&amp;resmode=sharp2','Leopard-Print Sofa Jewelry Box');	
 
 ------------------------------------------------------------
 
