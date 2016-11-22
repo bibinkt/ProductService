@@ -1,0 +1,58 @@
+
+--------------------------------------------------------------------------For Customer services
+
+CREATE KEYSPACE user_service
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+CREATE TABLE user(
+   user_id int PRIMARY KEY,
+   user_name text,
+   password text
+);
+
+INSERT INTO user(user_id,user_name,password
+   ) VALUES(1,'urName','urpwd');
+
+------------------------------------------------------------------------- For Product services
+
+CREATE KEYSPACE product_service
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+Use product_service;
+
+CREATE TABLE pp(
+   pp_id text PRIMARY KEY,
+   pp_name text,
+   pp_image_url text,
+   pp_long_description text
+);
+
+INSERT INTO pp(pp_id,pp_name ,
+   pp_image_url,pp_long_description) VALUES('pp5002880160','Sofa set','http://s7d2.scene7.com/is/image/JCPenney/DP0530201317005523M.tif?wid=400&amp;hei=400&amp;fmt=jpg&amp;op_usm=.4,.8,0,0&amp;resmode=sharp2','Leopard-Print Sofa Jewelry Box');	
+
+------------------------------------------------------------
+
+CREATE TABLE pp_price(
+   price_id int PRIMARY KEY,
+   pp_id text,
+   list_price text,
+   sale_price text,
+   market_label text
+);
+INSERT INTO pp_price(price_id,pp_id,list_price,
+   sale_price,market_label) VALUES(1,'pp5002880160', '100.00','50.00','50% discount');
+
+-----------------------------------------------------------
+CREATE TABLE pp_inventory(
+   inv_id int PRIMARY KEY,
+   pp_id text,
+   location_id text,
+   inv_status text,
+   atp_qty int,
+);
+
+INSERT INTO pp_inventory(inv_id,pp_id,location_id,
+   inv_status,atp_qty) VALUES(1,'pp5002880160','0000','AH',100);
+----------------------------------------------------------------------
+
+
