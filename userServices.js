@@ -14,7 +14,7 @@ exports.authenticate = function(req, res) {
     console.log(cquery);
     client.execute(cquery, function (err, result) {
 
-            if (typeof result === 'undefined') {
+            if (typeof result === 'undefined' || result.rows.length <= 0 ) {
                 return res.send('false');
             }else
             {
@@ -31,4 +31,42 @@ exports.authenticate = function(req, res) {
             }
         }
     )
+};
+
+exports.register = function(req, res) {
+    console.log("hi");
+    var cquery = "select count(*) from user";
+    client.execute(cquery, function (err, result) {
+        console.log("count -->"+result.rows[0].count);
+        var count = result.rows[0].count;
+        var user_id = req.param('id');
+        var pwd = req.param('pwd');
+        console.log("user_id -->"+user_id);
+        console.log("pwd -->"+pwd);
+        if(!err && pwd!=''&&user_id!='') {
+
+            count = parseInt(count) + 1;
+
+            const query = 'INSERT INTO user (user_id, user_name, password) VALUES (?, ?, ?)';
+            const params = [count, user_id, pwd];
+            client.execute(query, params, {prepare: true}, function (err) {
+                if(!err) {
+                    console.log("success -->Yes");
+                    var jsonService = '{"user":{'
+                        + '"user_name" : "'+ user_id + '", '
+                        + '"user_id" : "'+ pwd+ '"}} ';
+                    return res.json(jsonService);
+                } else {
+                    console.log("success -->No");
+                    return res.json('{success:false}');
+                }
+            });
+        } else {
+            console.log("success -->No");
+            return res.json('{success:false}');
+        }
+    });
+};
+exports.register1 = function(req, res) {
+
 };

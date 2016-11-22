@@ -13,6 +13,7 @@ app.get('/product/:id', productService.findById);
 app.get('/price/:id', pricingServices.findById);
 app.get('/inventory/:id', inventoryServices.findById);
 app.get('/authenticate', userServices.authenticate);
+app.get('/register', userServices.register);
 
 app.listen(8080);
 console.log('Listening on port 8080...');
