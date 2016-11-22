@@ -1,5 +1,7 @@
 
-A Microservice rest APIs exposed for giving product level information.
+#WIP
+
+Rest APIs exposed for giving Customer & product level information. 
 
 Tech.Used
 -------------
@@ -9,8 +11,9 @@ Tech.Used
 
 Steps to install
 ------------------
-1) Setup the cassandra DB : You may need to iunstall the DB in your local and get the script from script file and create and feed the sample data
-2) ..
+1.	Clone the repo using git clone https://github.com/bibinkt/ProductService.git
+2.	Run "npm install" to install the dependencies.
+3.	Run "node server.js" to start the local web server
 
 
 Current State
@@ -19,7 +22,4 @@ Currenlty it contain all the three service with in this module itself .
 
 Next steps
 ---------------------
-1) Building demonstrable services . Add more attributes & logic to look like real time services 
-2) Create transactional services mainly for checkout. next target will be add to bag service.
-3) AWS Cloude deployemnt with docker container
-4) Netflix Eureka integration
+
