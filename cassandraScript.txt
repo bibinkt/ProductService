@@ -4,6 +4,8 @@
 CREATE KEYSPACE user_service
 WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
 
+use user_service;
+
 CREATE TABLE user(
    user_id int PRIMARY KEY,
    user_name text,
